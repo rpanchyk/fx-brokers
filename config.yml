@@ -1,0 +1,62 @@
+# Конфігурація аналітики форекс-брокерів.
+# Змініть brokers і points — PDF і таблиці зберуться за цим списком.
+# Дата зрізу в PDF = день запуску (не налаштовується тут).
+# Запуск: python run.py
+
+output:
+  filename_pattern: "FxBrokers_{YYYY}-{MM}.pdf"  # {YYYY}/{MM} з дати запуску
+  orientation: portrait  # portrait (default) | landscape
+  paper_size: A4         # A4 (default) | A3
+  language: uk           # uk (default) | en  — UI language; research notes in data/brokers.yaml are Ukrainian
+  title: Аналітика форекс-брокерів
+
+# Порядок брокерів у звіті. id має збігатися з ключем у data/brokers.yaml
+brokers:
+  - icmarkets
+  - gomarkets
+  - avatrade
+  - cptmarkets
+  - dooprime
+  - fxcm
+  - startrader
+  - tickmill
+  - tradenation
+  - vantagemarkets
+  - forex4you
+  - roboforex
+  - a-markets
+  - admiralmarkets
+  - fxpro
+  - pepperstone
+  - blackbull
+  - eightcap
+  - fpmarkets
+  - fusionmarkets
+
+# Пункти аналізу. Порядок = важливість у звіті (профілі та зведені таблиці).
+# Вимкніть пункт (видаліть або закоментуйте) — він зникне зі звіту.
+points:
+  - id: homepage
+    label: Головна сторінка (URL)
+  - id: country
+    label: Країна реєстрації
+  - id: regulations
+    label: Регуляції брокера
+  - id: accounts
+    label: Типи рахунків та комісії
+  - id: swaps
+    label: Свопи
+  - id: kyc
+    label: Потреба KYC
+  - id: deposit
+    label: Поповнення (Card / Bank IBAN / Crypto)
+  - id: withdrawal
+    label: Виведення (Card / Bank IBAN / Crypto)
+  - id: rts
+    label: Return to Source Rule
+  - id: ukraine
+    label: Чи дозволена реєстрація для України
+  - id: platforms
+    label: MetaTrader 4 / MetaTrader 5 / cTrader
+  - id: algo
+    label: Чи підходить для алго-трейдингу
