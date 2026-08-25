@@ -1,0 +1,743 @@
+# Дослідницький корпус. Ключі = id з config.yml.
+# status: yes | no | partial
+# Оновлюйте поля тут; список брокерів у звіті задає config.yml.
+
+icmarkets:
+  name: IC Markets
+  tagline: ECN/Raw · ASIC + CySEC + FSA · повний стек платформ
+  homepage: https://www.icmarkets.com
+  founded: "2007"
+  hq: Австралія (Sydney)
+  country: Австралія; окремі компанії на Кіпрі, Сейшелах, Багамах, Кенії
+  regulations: "ASIC 335692; CySEC 362/18; FSA Seychelles SD018 (Raw Trading Ltd / IC Markets Global); SCB Bahamas SIA-F214; CMA Kenya 199"
+  ukraine:
+    status: yes
+    note: "Так, через Global (Seychelles, SD018). Україна не в публічному restricted-списку (на відміну від USA, Canada, NZ). Крим/окуповані території — санкційний стоп."
+  algo:
+    rating: Відмінна
+    note: "EA, cTrader Algo, FIX API, VPS, скальпінг без заборони. Raw критичний для HFT."
+  accounts: "Standard: від ~0.8 піп, $0 комісії. Raw MT4/MT5: від 0.0 + $3.50/side ($7 RT). cTrader Raw: $3.00/side ($6 RT). Islamic на всіх типах. Мін. депозит публічно ~$200."
+  swaps: "Стандартний overnight за диференціалом ставок; потрійний своп у середу. Islamic доступний (часто адмін. комісія після grace-періоду)."
+  kyc: "Обов’язковий: ID + proof of address (~3 міс.). Без KYC виведення не проходить. SoF на великі суми."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: yes
+    note: "Плюс TradingView на cTrader Raw."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC так. International wire / IBAN так. Крипто Global: BTC, ETH, USDT, USDC."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: yes
+    note: "Картка — лише в межах суми карткового депозиту. IBAN/SWIFT так. Крипто на Global так."
+  rts:
+    status: yes
+    note: "Жорстко. Спочатку джерело депозиту (картка/e-wallet), прибуток — wire або інший використаний метод. Треті особи заборонені."
+  extra: "Не приймає USA, Canada, NZ, Iran, КНДР. Плече 1:30 ASIC/CySEC, до 1:500 Global."
+
+gomarkets:
+  name: GO Markets
+  tagline: ASIC + CySEC · GO Plus+ для EA · MT4/MT5/cTrader · Україна так
+  homepage: https://www.gomarkets.com
+  founded: "2006"
+  hq: Австралія
+  country: Австралія; Кіпр (CySEC); Сейшели; Маврикій
+  regulations: "ASIC AFSL 254963; CySEC 322/17; FSA Seychelles SD043; FSC Mauritius GB19024896. FCA відкликано 02.2023"
+  ukraine:
+    status: yes
+    note: "Так. Жива форма реєстрації app.gomarkets.com містить Ukraine у списку країн (серпень 2026). Окремі огляди все ще копіюють старий exclusion-список — орієнтуйтесь на дропдаун. Крим/окуповані — ні."
+  algo:
+    rating: Відмінна
+    note: "GO Plus+ офіційно для high-volume і EA. Є cTrader."
+  accounts: "Standard: від 0.8 піп, $0. GO Plus+: від 0.0 + USD 2.50/side (AUD 3.00/side). Micro від $10 (offshore). Professional, Islamic. Мін. депозит $0 (реком. $200)."
+  swaps: "Стандартний overnight; Islamic так; потрійний своп у середу."
+  kyc: "Обов’язковий ID + адреса до виведення."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: yes
+    note: "Також TradingView."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Visa/MC і international bank/IBAN так. USDT є на intl-сайтах; ASIC-контур часто без крипто."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Same-name. Картка не більше внесеної суми."
+  rts:
+    status: yes
+    note: "Так, same-name, повернення на джерело."
+  extra: "Плече 1:30 ASIC/CySEC, до 1:500 Mauritius/Seychelles."
+
+avatrade:
+  name: AvaTrade
+  tagline: Мульти-регуляція · market maker · немає Raw і cTrader
+  homepage: https://www.avatrade.com
+  founded: "2006"
+  hq: Ірландія (Dublin)
+  country: Ірландія (головна EU-компанія); Австралія, ПАР, BVI, Японія, ADGM тощо
+  regulations: "CBI Ireland C53877; ASIC 406684; FSCA 45984; BVI FSC SIBA/L/13/1049; JFSA/FFAJ; ADGM FSRA; ISA; CIRO (Friedberg Direct)"
+  ukraine:
+    status: yes
+    note: "Так. Офіційний Help Centre (restricted list) НЕ включає Україну (є USA, UK, Russia, Belarus, Belgium…). Крим/окуповані — окремо під санкціями."
+  algo:
+    rating: Середня
+    note: "EA/скальпінг дозволені на MT4/MT5, але немає Raw/ECN, модель market maker, VPS немає."
+  accounts: "Standard spread-only, EUR/USD ~0.9 піп, $0 комісії. Professional, Islamic. Немає Raw. Мін. $100."
+  swaps: "Overnight financing. Islamic так. Inactivity ~$50/квартал після 3 міс. + адмін. збір."
+  kyc: "Обов’язковий ID + адреса; у EEA часто до першого депозиту."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "AvaTradeGO, WebTrader, AvaOptions, ZuluTrade, DupliTrade."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: no
+    note: "Visa/MC і wire/IBAN так. Крипто як funding немає (лише crypto CFD)."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: no
+    note: "Картка і банк так. Крипто ні."
+  rts:
+    status: yes
+    note: "Так. Спочатку той самий метод; прибуток понад депозит — часто bank."
+  extra: "Entity визначається резидентством, обрати «вигіднішу» зазвичай не можна."
+
+cptmarkets:
+  name: CPT Markets
+  tagline: FCA є, більшість ритейлу — Belize/FSCA · Classic/Prime/ECN
+  homepage: https://www.cptmarkets.com
+  founded: "2008"
+  hq: UK / мульти-entity (раніше Citypoint Trading)
+  country: Велика Британія, ПАР, Беліз; UAE introducing
+  regulations: "FCA 606110 (CPT Markets UK Ltd); FSCA 45954 (Pty Ltd, ПАР); FSC Belize FSC000314/17; SCA UAE Category 5 — introducing, не брокеридж"
+  ukraine:
+    status: yes
+    note: "Так на міжнародному контурі (FSCA/Belize). Україна не фігурує в типових санкційних стопах бренду. Завжди перевіряйте дропдаун. Крим — ні."
+  algo:
+    rating: Добра
+    note: "EA дозволені, ECN під скальп. cTrader на частині групи. Є скарги на затягнуті виведення."
+  accounts: "Classic від $20, ~1.4 піп, $0. Prime від $1 000, ~0.7 піп, $0. ECN від $1 000, 0.0–0.1 + ~$4–5 RT. Swap-free."
+  swaps: "Стандартний rollover, потрійний у середу. Swap-free так."
+  kyc: "Обов’язковий."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: partial
+    note: "cTrader на маркетингу групи; підтверджуйте на своїй entity."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Visa/MC і bank/IBAN так. Крипто на offshore; FCA UK — ні."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "OTP. Wire інколи $20–25."
+  rts:
+    status: yes
+    note: "Так (AML, same-name)."
+  extra: "Inactivity в джерелах ~$50/міс. після 90 днів. Плече 1:30 FCA, до 1:1000 offshore."
+
+dooprime:
+  name: Doo Prime
+  tagline: Offshore ритейл (FSA/FSC/VFSC) · Cent/STP/ECN · крипто так
+  homepage: https://www.dooprime.com
+  founded: "2014"
+  hq: Hong Kong / Seychelles / Mauritius / Vanuatu
+  country: Сейшели, Маврикій, Вануату (ритейл-контракт)
+  regulations: "FSA Seychelles SD090; FSC Mauritius C119023907; VFSC Vanuatu 700238. Група Doo має окремі FCA/ASIC/FINRA компанії — це НЕ захист клієнта Doo Prime."
+  ukraine:
+    status: yes
+    note: "Так на ритейл-entity групи. Україна не в стандартному санкційному списку (на відміну від USA). Крим/окуповані — ні."
+  algo:
+    rating: Добра
+    note: "EA на MT4/MT5, TradingView, у групи згадується FIX API. Немає cTrader."
+  accounts: "Cent $0–5, від ~1.0 піп, $0. STP $0–100, від ~1.0, $0. ECN від $100, від 0.0 + типово $10 RT (інколи $6–7). Плече до 1:1000."
+  swaps: "Стандарт + grace-період без свопу на частині інструментів. Islamic так."
+  kyc: "ID + адреса (часто до 6 міс.)."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "InTrade, TradingView."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, bank/IBAN, USDT/BTC/ETH. Внутрішньої комісії немає."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: yes
+    note: "Крипто/e-wallet найшвидші. Картка залежить від процесора."
+  rts:
+    status: yes
+    note: "Same-name / джерело депозиту."
+  extra: "Немає tier-1 компенсації на типовому ритейл-рахунку."
+
+fxcm:
+  name: FXCM
+  tagline: FCA + ASIC + CySEC · Trading Station + MT4 · немає MT5/cTrader
+  homepage: https://www.fxcm.com
+  founded: "1999"
+  hq: London (Stratos / Jefferies)
+  country: Велика Британія; Австралія; Кіпр; ПАР; SVG (міжнародна)
+  regulations: "FCA 217689 (Stratos Markets Ltd); ASIC 309763; CySEC 392/20; FSCA 46534; ISA Israel; SVG Stratos Global LLC"
+  ukraine:
+    status: yes
+    note: "Так на міжнародному контурі (перевірка через дропдаун країни на відкритті рахунку). USA не приймає. Крим — ні."
+  algo:
+    rating: Добра / специфічна
+    note: "Сильна екосистема (Trading Station, QuantConnect, NinjaTrader), але немає MT5 і cTrader."
+  accounts: "Standard spread-only, EUR/USD ~0.7–1.3 піп. Active Trader — вужчий спред + комісія. Islamic. Мін. $50."
+  swaps: "Rollover ~17:00 NY, потрійний у середу. Islamic так."
+  kyc: "ID + адреса, типово 1–2 дні."
+  platforms:
+    mt4: yes
+    mt5: no
+    ctrader: no
+    note: "Trading Station, TradingView, ZuluTrade."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Visa/MC і wire/IBAN так. Crypto є на fxcm.com/markets (BTC/ETH/USDT); UK/AU набір вужчий."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: partial
+    note: "Картка лише principal. Прибуток — bank."
+  rts:
+    status: yes
+    note: "Дуже жорсткий RTS. Треті особи заборонені."
+  extra: "Власник Jefferies (NYSE: JEF). Ритейл USA закритий з 2017."
+
+startrader:
+  name: StarTrader
+  tagline: ASIC + FSCA + FSA/FSC/CMA · Standard/ECN/Prime · UA — перевіряти
+  homepage: https://www.startrader.com
+  founded: "2019"
+  hq: Mauritius (Ebene)
+  country: Маврикій; Австралія; ПАР; Сейшели; ОАЕ
+  regulations: "ASIC; FSCA; FSA Seychelles; FSC Mauritius; CMA UAE. Член Financial Commission (до €20k)."
+  ukraine:
+    status: partial
+    note: "Суперечливо. TradersUnion 2026 включає Ukraine до available; TradingFinder — до restricted. NSSMC попереджає про неавторизовані фінпослуги бренду в Україні. Обов’язково перевірте дропдаун реєстрації перед депозитом."
+  algo:
+    rating: Добра
+    note: "EA на MT4/MT5 офіційно. Немає cTrader."
+  accounts: "Standard від $50, ~1.3 піп, $0 (крім індексів). ECN/Prime ECN від 0.0 + ~$6–7 RT. Micro/Cent, Islamic, PAMM."
+  swaps: "Стандартна таблиця, потрійний у середу. Islamic так."
+  kyc: "Обов’язковий."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "WebTrader, App."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, international wire, крипто на intl."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Same-name. Wire часто $25."
+  rts:
+    status: yes
+    note: "Так, same-name."
+  extra: "Більшість не-AU клієнтів — Mauritius/Seychelles з вищим плечем."
+
+tickmill:
+  name: Tickmill
+  tagline: FCA + CySEC · Raw $6 RT · all strategies allowed
+  homepage: https://www.tickmill.com
+  founded: "2014"
+  hq: UK / група
+  country: Велика Британія, Кіпр, ПАР, Сейшели
+  regulations: "FCA 717270; CySEC 278/15; FSCA FSP 49464; FSA Seychelles SD008; DFSA representative F007663"
+  ukraine:
+    status: yes
+    note: "Так (типово FSA Seychelles для UA). Публічні стопи — USA, Japan, Canada. Крим/окуповані — ні. Перевірте дропдаун."
+  algo:
+    rating: Відмінна
+    note: "Офіційно All Strategies Allowed. Raw $3/side. Немає cTrader."
+  accounts: "Classic $100, від 1.6 піп, $0. Raw від 0.0 + $3/side ($6 RT). TradingView Raw $3.50/side. Islamic."
+  swaps: "Публічна таблиця, 00:00 platform time, потрійний у середу. Islamic: daily charge після 3 ночей на частині інструментів. Крипто long ~10% річних."
+  kyc: "Обов’язковий, SoF за AML."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "Tickmill Trader, TradingView."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, wire (USD/EUR/GBP/ZAR), Crypto Payments, Skrill, Neteller, UnionPay. $0 комісії брокера."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: yes
+    note: "Картка до суми депозиту. Min withdrawal $25. Wire ≥$5k — компенсація банківської комісії до $100."
+  rts:
+    status: yes
+    note: "Офіційні приклади: картка first, решта — інший метод."
+  extra: "FSCS до £120k (UK); ICF €20k (EU)."
+
+tradenation:
+  name: Trade Nation
+  tagline: FCA + ASIC · фіксований спред · слабкий алго-профіль
+  homepage: https://www.tradenation.com
+  founded: "2014"
+  hq: London
+  country: UK, Австралія, Багами, ПАР, Сейшели, Португалія
+  regulations: "FCA 525164; ASIC 422661; SCB SIA-F216; FSCA 49846; FSA Seychelles SD150; CMVM Portugal 601"
+  ukraine:
+    status: yes
+    note: "Так через міжнародні entity (FSA Seychelles / SCB). Не FCA/ASIC-контур. Перевірте, що країна є в реєстрації. Крим — ні."
+  algo:
+    rating: Слабка / середня
+    note: "EA лише на MT4 зі змінним спредом. Немає MT5, cTrader, Raw ECN."
+  accounts: "TN Trader: фікс. спред (EUR/USD 0.5 піп), $0 комісії. MT4 — змінний спред. Pro/Wholesale. Немає Islamic (AU, 07.2026). Мін. $0 на AU/UK; інколи $50."
+  swaps: "Overnight financing після NY close. Swap-free немає."
+  kyc: "Обов’язковий."
+  platforms:
+    mt4: yes
+    mt5: no
+    ctrader: no
+    note: "TN Trader, TradingView."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Visa/MC, bank. Крипто на payments-сторінці низки регіонів (BTC, ETH, USDT…); FCA/ASIC вужче."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Min 50 одиниць валюти. $0 комісії брокера."
+  rts:
+    status: yes
+    note: "«In most cases» на джерело депозиту."
+  extra: "Проста модель без комісії; не для cAlgo/MT5-роботів."
+
+vantagemarkets:
+  name: Vantage Markets
+  tagline: ASIC + FCA + CIMA/VFSC · STP/RAW/Pro ECN · без cTrader
+  homepage: https://www.vantagemarkets.com
+  founded: "2009"
+  hq: Австралія (Sydney)
+  country: Австралія, UK, Cayman, ПАР, Vanuatu
+  regulations: "ASIC 428901; FCA 590299; CIMA Cayman 1383491; FSCA 51268; VFSC 700271"
+  ukraine:
+    status: no
+    note: "Ні. Незалежні списки 2026 (TradersUnion, Benzinga/Tokize) включають Ukraine до restricted (разом із USA, Canada, Russia). Help Centre формулює політику через FATF/санкції — перевіряйте актуальний список."
+  algo:
+    rating: Добра / відмінна
+    note: "RAW ECN + MT4/MT5 EA. ProTrader = TradingView, не cTrader."
+  accounts: "Standard STP $50, від ~1.0–1.1 піп, $0. RAW ECN $50, від 0.0 + $3/side ($6 RT). Pro ECN від $10 000, $1.50/side. Swap-free."
+  swaps: "Overnight ~22:00. Islamic так. Inactivity ~$20 після 90 днів."
+  kyc: "Обов’язковий."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "Vantage App, ProTrader/TradingView."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, wire, USDT/USDC/BTC/ETH на intl."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Wire 3–5 днів, банк. збір ~$20–25."
+  rts:
+    status: yes
+    note: "Явно в Deposit & Withdrawal Policy: лише на рахунок джерела депозиту."
+  extra: "AU/UK — 1:30; більшість світу VFSC/CIMA до 1:500."
+
+forex4you:
+  name: Forex4you
+  tagline: Markets4you · BVI + Mauritius · без tier-1 · крипто так
+  homepage: https://markets4you.com
+  founded: "2007"
+  hq: BVI (Road Town)
+  country: Британські Віргінські Острови; Маврикій
+  regulations: "BVI FSC SIBA/L/12/1027 (E-Global Trade & Finance Group, Inc.); Mauritius FSC GB21026460 (Trade4you International). Немає FCA/CySEC/ASIC."
+  ukraine:
+    status: yes
+    note: "Так (історично CIS-ринок). Крим і окуповані території блокують через санкції регулятора. Не приймає USA, EEA, AU, Japan, Canada."
+  algo:
+    rating: Середня
+    note: "EA на MT4/MT5 працюють. Регуляторний захист слабкий."
+  accounts: "Classic Standard від 0.9 піп, $0. Classic Pro від 0.1 + $7 RT. Cent Standard/Pro. Islamic. Плече до 1:4000. Мін. $0 / $1 e-wallet."
+  swaps: "Стандартний overnight. Islamic так."
+  kyc: "Обов’язковий."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "Власний app, Share4you copy."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, локальні банки, USDT/USDC/BTC/ETH/XRP. 0% комісії брокера."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Auto-Withdrawal для верифікованих."
+  rts:
+    status: yes
+    note: "Third-party заборонено, same-name."
+  extra: "Ребрединг Forex4you → Markets4you (~2024). Inactivity ~$10 після 12 міс."
+
+roboforex:
+  name: RoboForex
+  tagline: Belize FSC · Pro/Prime/ECN · cTrader закрито 2023
+  homepage: https://www.roboforex.com
+  founded: "2009"
+  hq: Belize
+  country: Беліз (RoboForex Ltd). EU-бренд RoboMarkets — окрема компанія
+  regulations: "Belize FSC 9759600. Член Financial Commission (до €20k). Немає FCA/CySEC на intl RoboForex."
+  ukraine:
+    status: yes
+    note: "Так. Один із найбільш поширених брокерів серед українських трейдерів. Окуповані території / санкційні зони — ні."
+  algo:
+    rating: Добра
+    note: "EA на MT4/MT5. cTrader офіційно закрито 08.08.2023 (багато оглядів 2026 досі помилково вказують cTrader)."
+  accounts: "Pro/ProCent від $10, 1.3 піп, $0. Prime ~$10/$1M (~$2 RT). ECN ~$20/$1M (~$4 RT). R StocksTrader $100, 12 000+ інструментів. Islamic з 02.2026 на всіх типах."
+  swaps: "Стандарт + swap-free опція на всіх типах з лютого 2026."
+  kyc: "ID + адреса."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "R StocksTrader, TradingView. cTrader discontinued."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Visa/MC і bank/IBAN так, багато локальних методів. BTC як funding у свіжих оглядах часто відсутній."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Комісії 0.5–4%. Три «безкоштовні вівторки» на місяць (2/3/4 вівторок)."
+  rts:
+    status: yes
+    note: "Only own name. Third-party заборонено."
+  extra: "Не плутати з RoboMarkets (EU), де MT4/MT5 для ритейлу немає."
+
+blackbull:
+  name: BlackBull Markets
+  tagline: NZ FMA + FSA · ECN Prime $6 RT · MT4/MT5/cTrader · Україна заборонена
+  homepage: https://blackbull.com
+  founded: "2014"
+  hq: Нова Зеландія (Auckland)
+  country: Нова Зеландія; Сейшели (міжнародна)
+  regulations: "FMA / FSPR FSP403326 (Black Bull Group Ltd, NZ, licence 12.08.2020); FSA Seychelles SD045 (BBG Ltd). Немає FCA/ASIC/CySEC на бренд-контурі ритейлу."
+  ukraine:
+    status: no
+    note: "Ні. Офіційна сторінка Restricted Countries прямо включає Ukraine (разом із USA, Russia, Belarus, Canada…)."
+  algo:
+    rating: Відмінна (якщо країна дозволена)
+    note: "EA, cTrader, TradingView, FIX API, VPS на Prime. Для України недоступний."
+  accounts: "ECN Standard: від 0.8 піп, $0, мін. $0. ECN Prime: від 0.0 + $3/side ($6 RT), $0. Prime+: ті самі + rebates. Institutional від $20 000, $4 RT. Islamic (без заміни свопу комісією — за заявою брокера)."
+  swaps: "Стандартний overnight. Swap-free за запитом на всіх типах."
+  kyc: "Обов’язковий ID + адреса."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: yes
+    note: "TradingView, CopyTrader, BlackBull Invest, FIX API."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, bank/IBAN, крипто BTC/ETH/USDT/USDC/XRP/LTC тощо. Депозит $0 комісії брокера."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Фіксована комісія виведення ~$5 на більшість методів. Крипто 1–2 дні."
+  rts:
+    status: partial
+    note: "Можна інший метод, якщо виконані compliance-вимоги; на практиці джерело депозиту пріоритетне."
+  extra: "Inactivity ~$10/міс. після 12 міс. Для UA — блок на вході, інші умови не релевантні."
+
+eightcap:
+  name: Eightcap
+  tagline: ASIC + FCA + CySEC · Raw $7 RT · немає cTrader · Україна заборонена
+  homepage: https://www.eightcap.com
+  founded: "2009"
+  hq: Австралія (Melbourne)
+  country: Австралія, UK, Кіпр, Багами, Сейшели, Маврикій
+  regulations: "ASIC AFSL 391441 (Eightcap Pty Ltd); FCA FRN 921296 (Eightcap Group Ltd); CySEC 246/14 (Eightcap EU Ltd); SCB SIA-F220; FSA Seychelles; FSC Mauritius GB25204603"
+  ukraine:
+    status: no
+    note: "Ні. Публічні restricted-списки 2026 включають Ukraine (разом із USA, Belarus, Pakistan…)."
+  algo:
+    rating: Добра (якщо країна дозволена)
+    note: "EA на MT4/MT5, VPS, Raw від 0.0. Немає cTrader і FIX. UK entity — лише TradingView, без MT."
+  accounts: "Standard: від 1.0 піп, $0, мін. $100. Raw: від 0.0 + $3.50/side ($7 RT). Islamic у більшості оглядів немає."
+  swaps: "Стандартний overnight, потрійний у середу. Немає класичного Islamic (за DailyForex 2026)."
+  kyc: "Обов’язковий до виведення."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "TradingView, TradeLocker. Набір залежить від entity (FCA без MT4/MT5)."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Visa/MC, wire/SEPA/IBAN. Крипто (BTC, USDT, ETH) на SCB Bahamas, не на FCA/CySEC."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Офіційно RTS: той самий метод. Прибуток — переважно bank wire. $0 комісії брокера; SWIFT інколи ~$25 банк."
+  rts:
+    status: yes
+    note: "Жорстко прописано: same method; картка first при кількох джерелах; FIFO по картках."
+  extra: "Глибока лінійка crypto CFD (250+). Для України — недоступний."
+
+fpmarkets:
+  name: FP Markets
+  tagline: ASIC + CySEC · Raw $6 RT · MT4/MT5/cTrader · Україна так
+  homepage: https://www.fpmarkets.com
+  founded: "2005"
+  hq: Австралія (Sydney)
+  country: Австралія; Кіпр; ПАР; Сейшели; Маврикій; Багами; Кенія
+  regulations: "ASIC AFSL 286354 (First Prudential Markets Pty Ltd); CySEC 371/18; FSCA FSP 50926; FSA Seychelles SD130; FSC Mauritius; SCB; CMA Kenya"
+  ukraine:
+    status: yes
+    note: "Так. Окремі огляди 2025–2026: onboarding UA через FSA Seychelles / SVG, плече до 1:500. Restricted: USA, Russia, Iran, санкційні юрисдикції — Україна не в цьому списку. Крим — ні."
+  algo:
+    rating: Відмінна
+    note: "Raw ECN, EA, скальпінг/хедж дозволені, cTrader + TradingView + IRESS."
+  accounts: "Standard: від ~1.0 піп, $0, мін. $100. Raw ECN: від 0.0 + $3/side ($6 RT); AU entity AUD 3.50/side. Islamic. IRESS — окремий fee."
+  swaps: "Публічна таблиця forex swap rates. Islamic так."
+  kyc: "Обов’язковий ID + адреса."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: yes
+    note: "TradingView, IRESS/Mottai (акції)."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, SWIFT/IBAN, PayPal, Skrill/Neteller, крипто (залежить від entity)."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: yes
+    note: "Картка до суми депозиту, прибуток — bank. Wire інколи $20–25 банк. Брокер $0."
+  rts:
+    status: yes
+    note: "Стандартний AML RTS, same-name."
+  extra: "Один з найкращих збігів у списку для алго + Україна + cTrader."
+
+fusionmarkets:
+  name: Fusion Markets
+  tagline: ASIC + VFSC/FSA · Zero $4.50 RT · MT4/MT5/cTrader · Україна заборонена
+  homepage: https://fusionmarkets.com
+  founded: "2017"
+  hq: Австралія (Melbourne)
+  country: Австралія; Вануату; Сейшели
+  regulations: "ASIC 385620; VFSC Vanuatu 40256; FSA Seychelles SD096"
+  ukraine:
+    status: no
+    note: "Ні. FXEmpire / BrokerRank 2026: Ukraine у restricted (разом із USA, Russia, Spain, Japan, NZ)."
+  algo:
+    rating: Відмінна (якщо країна дозволена)
+    note: "Найнижча комісія в вибірці ($2.25/side). Zero + cTrader/MT5 ідеальні для EA. Для України недоступний."
+  accounts: "Classic: від ~0.9 піп, $0 (лише MT4/MT5). Zero: від 0.0 + $2.25/side ($4.50 RT), MT4/MT5/cTrader/TradingView. Мін. $0."
+  swaps: "Стандартний overnight. Swap-free — уточнювати (не акцент бренду)."
+  kyc: "Обов’язковий; 90% акаунтів approve < 1 год. (за заявою брокера)."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: yes
+    note: "TradingView через Zero. Classic без cTrader."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, bank wire, crypto. $0 комісії брокера."
+  withdrawal:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "$0; 85% < 1 год. (заявка брокера). RTS стандартний."
+  rts:
+    status: yes
+    note: "AML same-source / same-name."
+  extra: "Немає FCA/CySEC. Intl без NBP на VFSC/FSA. Для UA — блок."
+
+a-markets:
+  name: AMarkets
+  tagline: Offshore (MISA/FSC/SVG) · ECN $5 RT · MT4/MT5 · Україна так
+  homepage: https://www.amarkets.com
+  founded: "2007"
+  hq: Offshore (Mwali / Cook Islands / SVG)
+  country: Комори (Mwali); Острови Кука; Сент-Вінсент і Гренадини
+  regulations: "MISA Mwali T2023284 (AMarkets LTD); FSC Cook Islands LLC14486/2023; SVG FSA 22567 BC 2015. Член Financial Commission (до €20k). Немає FCA/CySEC/ASIC."
+  ukraine:
+    status: yes
+    note: "Так. TradersUnion / регіональні списки 2026 включають Ukraine до available. Офіційний ua.amarkets.com. Крим/окуповані — ні."
+  algo:
+    rating: Добра
+    note: "EA на MT4/MT5, ECN/Zero для скальпу. Офіційний сайт 2026 акцентує MT4/MT5; cTrader у маркетингу оглядів — не підтверджено на головній."
+  accounts: "Standard від $100, від ~1.3 піп, $0. ECN від $200, від ~0.2 + $2.50/side ($5 RT). Zero від $200, від 0.0 + $5.50/side. Плече до 1:3000. Islamic за запитом."
+  swaps: "Стандартний overnight; Islamic за запитом."
+  kyc: "Обов’язковий (ID); депозит після верифікації. Середній час ID ~хвилини (заявка брокера)."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "AMarkets App, copy trading / PAMM. cTrader — не на актуальній головній сторінці."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: yes
+    note: "Visa/MC, bank/IBAN, crypto (BTC/ETH/USDT/USDC/LTC/BNB…). Комісію депозиту брокер компенсує (за FAQ)."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: yes
+    note: "RTS/пропорції методів. Картка — ліміти процесора (~$1k/запит у FAQ). Обробка finance ~24 год."
+  rts:
+    status: yes
+    note: "Жорстко: той самий метод і пропорції депозиту; прибуток пропорційно джерелам. Third-party заборонено."
+  extra: "Слабкий регуляторний захист (offshore). Популярний у CIS; не плутати з tier-1."
+
+admiralmarkets:
+  name: Admirals
+  tagline: FCA + CySEC + FSA · Zero $6 RT · MT4/MT5 · Україна так
+  homepage: https://admiralmarkets.com
+  founded: "2001"
+  hq: Естонія (Tallinn) / група Admirals
+  country: Естонія (група); Кіпр; Велика Британія; Австралія; Сейшели
+  regulations: "FCA 595450 (Admirals UK Ltd); CySEC 201/13 (Admirals Europe Ltd); ASIC AFSL 410681; FSA Seychelles SD073 (Admirals SC Ltd); EFSA Estonia; FSCA; JSC Jordan"
+  ukraine:
+    status: yes
+    note: "Так у списках available 2026 (TradersUnion) — типово Admirals SC Ltd (FSA SD073). BrokerFit 2026: нові заявки UA інколи case-by-case. Перевірте дропдаун. Крим — ні."
+  algo:
+    rating: Добра
+    note: "EA на MT4/MT5, Supreme Edition. Немає cTrader. Zero.MT4/MT5 під скальп/алго."
+  accounts: "Trade.MT4/MT5: від ~0.5 піп, $0 комісії, мін. типово $100. Zero.MT4/MT5: від 0.0 + $3/side ($6 RT; знижки за обсяг). Invest.MT5 — реальні акції/ETF (не CFD). Islamic на частині entity."
+  swaps: "Стандартний overnight. Swap-free / Islamic — залежить від entity і інструмента."
+  kyc: "Обов’язковий ID + адреса. Для UA після 2022 часто суворіший SoF."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: no
+    note: "Admirals web/app, MetaTrader Supreme Edition. Немає cTrader і TradingView native."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: no
+    note: "Visa/MC, SEPA/SWIFT/IBAN, e-wallet. Crypto funding на tier-1 немає; на FSA — не акцент / часто відсутнє."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: no
+    note: "Брокер: депозит $0. Часто 1–2 безкоштовні виведення/міс., далі комісія (картка ~1%). Картка — principal/RTS."
+  rts:
+    status: yes
+    note: "Стандартний AML RTS, same-name; виведення на джерело депозиту."
+  extra: "Ребрендинг Admiral Markets → Admirals. UA зазвичай не FCA/CySEC (1:30), а Seychelles до ~1:500."
+
+fxpro:
+  name: FxPro
+  tagline: FCA + CySEC + SCB · Raw+ · MT4/MT5/cTrader · Україна так
+  homepage: https://www.fxpro.com
+  founded: "2006"
+  hq: UK / Кіпр / Bahamas
+  country: Велика Британія; Кіпр; Багами; ПАР; DFSA (UAE)
+  regulations: "FCA 509956 (FxPro UK Ltd); CySEC 078/07 (FxPro Financial Services Ltd); SCB SIA-F184; FSCA 45052; DFSA"
+  ukraine:
+    status: yes
+    note: "Так на міжнародному контурі (типово SCB). Публічні стопи — USA, Canada, Iran тощо. Перевірте дропдаун. Крим — ні."
+  algo:
+    rating: Відмінна
+    note: "EA на MT4/MT5, cTrader Algo, скальпінг дозволений, VPS для qualifying. Raw+ / cTrader для алго."
+  accounts: "Standard: від ~1.2 піп, $0, мін. ~$100. Raw+: від 0.0 + до $3.50/side (MT4/MT5). cTrader: від ~0.2 + ~$3.50/side ($35/$1M). Elite — rebates. Islamic."
+  swaps: "Стандартний overnight / financing. Islamic доступний на частині entity."
+  kyc: "Обов’язковий ID + адреса (регульований брокер)."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: yes
+    note: "FxPro Platform (Edge). Набір залежить від entity."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Visa/MC і wire/IBAN так. Crypto (BTC/ETH/USDT/USDC) — SCB/FSCA; FCA/CySEC без crypto funding."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: partial
+    note: "$0 комісії брокера. Картка — principal/RTS. Crypto лише на entity, де був crypto-депозит."
+  rts:
+    status: yes
+    note: "Стандартний AML RTS, same-name; картка first при кількох методах."
+  extra: "Сильна мульти-регуляція. UA-клієнти зазвичай не на FCA/CySEC (1:30), а на SCB з вищим плечем."
+
+pepperstone:
+  name: Pepperstone
+  tagline: ASIC + FCA + CySEC · Razor $6–7 RT · MT4/MT5/cTrader · Україна ні
+  homepage: https://pepperstone.com
+  founded: "2010"
+  hq: Австралія (Melbourne)
+  country: Австралія; UK; Кіпр; Багами; Німеччина (BaFin); DFSA; CMA Kenya
+  regulations: "ASIC AFSL 414530; FCA 684312; CySEC; BaFin; SCB Bahamas; DFSA; CMA Kenya"
+  ukraine:
+    status: no
+    note: "Ні. TradersUnion / огляди 2026 включають Ukraine до restricted (разом із USA, Canada, Japan…). Остаточно — дропдаун реєстрації."
+  algo:
+    rating: Відмінна (якщо країна дозволена)
+    note: "Razor + EA, cTrader Algo, TradingView. Для України недоступний."
+  accounts: "Standard: від ~1.0 піп, $0, мін. $0 (реком. ~$200). Razor: від 0.0 + $3.50/side на MT4/MT5 ($7 RT); cTrader/TradingView часто $3/side ($6 RT). Islamic."
+  swaps: "Стандартний overnight financing. Islamic/swap-free доступний."
+  kyc: "Обов’язковий ID + адреса."
+  platforms:
+    mt4: yes
+    mt5: yes
+    ctrader: yes
+    note: "TradingView native, Pepperstone Platform. Повний стек для алго."
+  deposit:
+    card: yes
+    bank_iban: yes
+    crypto: partial
+    note: "Visa/MC, international bank/IBAN. Crypto лише на окремих entity (напр. Pepperstone Financial Services LLC / SCB), не на FCA/CySEC/ASIC."
+  withdrawal:
+    card: partial
+    bank_iban: yes
+    crypto: partial
+    note: "Офіційно виведення на метод поповнення. $0 комісії брокера (банк може брати SWIFT). Картка — principal."
+  rts:
+    status: yes
+    note: "Withdrawals posted to the original funding method (AML RTS)."
+  extra: "Сильний алго-профіль, але для резидентів України — блок на вході."
