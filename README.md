@@ -13,7 +13,7 @@
 | `run.py` | Точка входу |
 | `src/` | Завантаження конфігу/даних і збірка PDF |
 | `requirements.txt` | Залежності (`reportlab`, `PyYAML`) |
-| `FxBrokers_YYYY-MM.pdf` | Результат (у `.gitignore`) |
+| `FxBrokers_YYYY-MM.pdf` | Результат |
 
 ## Встановлення
 
