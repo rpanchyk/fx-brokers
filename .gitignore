@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Tooling / IDE
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Generated reports
+_tmp_*.pdf
